@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citesync"
+version = "0.1.0"
+description = "Pull publications from ORCID (or Google Scholar) and generate formatted Markdown + BibTeX citation pages."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kundan" }]
+keywords = ["orcid", "google-scholar", "bibtex", "citations", "academic", "cli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Text Processing :: Markup",
+]
+dependencies = [
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-mock>=3.11",
+    "responses>=0.23",
+]
+
+[project.scripts]
+citesync = "citesync.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-username/citesync"
+Issues = "https://github.com/your-username/citesync/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
