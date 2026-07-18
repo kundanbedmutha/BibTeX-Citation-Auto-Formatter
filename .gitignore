@@ -6,3 +6,5 @@ build/
 dist/
 sample_output/
 .venv/
+citations.md
+citations.bib
